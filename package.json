@@ -9,6 +9,7 @@
   "author": "shinog971",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "tuntap2": "^0.9.1"
   }
 }

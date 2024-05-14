@@ -1,4 +1,10 @@
 const {Tun, Tap} = require('tuntap2');
+var express = require ('express');
+
+//Initiate server
+var app = express();
+
+
 
 try {
     const tun = new Tun();
@@ -8,10 +14,20 @@ try {
         console.log('received:', buf)
     })
     tun.isUp = true;
-    console.log(`created tun: ${tun.name}, ip: ${tun.ipv4}, ${tun.ipv6}, mtu: ${tun.mtu}`);
+    var result = `created tun: ${tun.name}, ip: ${tun.ipv4}, ${tun.ipv6}, mtu: ${tun.mtu}`
     tun.release();
 }
 catch(e) {
     console.log('error: ', e);
     process.exit(0);
 }
+
+// configure routes
+app.get('/', function (req, res) {
+    res.send(result)
+});
+
+//launch server
+app.listen(3000, function(){
+    console.log('Serveur en écoute')
+});
