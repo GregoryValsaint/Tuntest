@@ -1,0 +1,14 @@
+{
+  "name": "tuntest",
+  "version": "1.0.0",
+  "description": "test de création de tunnel via tuntap2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shinog971",
+  "license": "ISC",
+  "dependencies": {
+    "tuntap2": "^0.9.1"
+  }
+}
